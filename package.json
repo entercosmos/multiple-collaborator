@@ -1,7 +1,7 @@
 {
-  "name": "multiple-collaborator-field",
-  "version": "1.0.0",
-  "description": "multiple-collaborator-field React component",
+  "name": "@cmds/multiple-collaborator-field",
+  "version": "0.1.0",
+  "description": "Used for selecting multiple collaborators.",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
@@ -11,6 +11,7 @@
     "umd"
   ],
   "scripts": {
+    "deploy": "cd demo/dist && surge --domain cmds-multiple-collaborator-field.surge.sh",
     "build": "nwb build-react-component",
     "clean": "nwb clean-module && nwb clean-demo",
     "prepublishOnly": "npm run build",
@@ -31,7 +32,7 @@
   "author": "",
   "homepage": "",
   "license": "MIT",
-  "repository": "",
+  "repository": "git@github.com:entercosmos/multiple-collaborator-field.git",
   "keywords": [
     "react-component"
   ]
