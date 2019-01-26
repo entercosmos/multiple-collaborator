@@ -1,5 +1,7 @@
 # ![MultipleCollaboratorField](https://user-images.githubusercontent.com/44801418/48134212-ec918b80-e2cb-11e8-9dcc-da88a8e2ae37.png) MultipleCollaboratorField
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/entercosmos/multiple-collaborator-field.svg)](https://greenkeeper.io/)
+
 [![npm package][npm-badge]][npm]
 
 Used for selecting multiple collaborators.
