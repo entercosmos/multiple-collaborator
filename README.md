@@ -19,10 +19,8 @@ npm install @cmds/multiple-collaborator-field --save
 | roleId | Role | ✓ | The behaviour changes based on the role. Valid options include `editor` or `readOnly` |
 | collaborators | Array | ✓ | List of collaborators that can be selected |
 | collaboratorIds | Array |  | List of selected collaborators |
-| onLink | Function |  | Callback invoked whenever a collaborator get's added to the selection: `({id: string, collaboratorId: string}): void` |
-| onUnlink | Function |  | Callback invoked whenever a collaborator get's removed from the selection: `({id: string, collaboratorId: string}): void` |
-| onClear | Function |  | Callback invoked whenever the selected collaborators get cleared: `({id: string}): void` |
-| onSort | Function |  | Callback invoked whenever one of the selected options get's sorted: `({id: string, collaboratorId: string, targetIndex: number}): void` |
+| onCollaboratorLink | Function |  | Callback invoked whenever a collaborator get's added to the selection: `({id: string, collaboratorId: string}): void` |
+| onCollaboratorUnlink | Function |  | Callback invoked whenever a collaborator get's removed from the selection: `({id: string, collaboratorId: string}): void` |
 
 ````jsx harmony
 import MultipleCollaboratorField from '@cmds/multiple-collaborator-field'
@@ -39,16 +37,10 @@ import MultipleCollaboratorField from '@cmds/multiple-collaborator-field'
         name: 'Leia Organa'
     }]}
     collaboratorIds={['col1']}
-    onLink={({id, collaboratorId}) => {
+    onCollaboratorLink={({id, collaboratorId}) => {
         // do something
     }}
-    onUnlink={({id, collaboratorId}) => {
-        // do something
-    }}
-    onClear={({id}) => {
-        // do something
-    }}
-    onSort={({id, collaboratorId, targetIndex}) => {
+    onCollaboratorUnlink={({id, collaboratorId}) => {
         // do something
     }}
 />
