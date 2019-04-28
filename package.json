@@ -1,6 +1,6 @@
 {
   "name": "@cmds/multiple-collaborator-field",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Used for selecting multiple collaborators.",
   "main": "lib/index.js",
   "module": "es/index.js",
