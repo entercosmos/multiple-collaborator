@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import {render} from 'react-dom'
 import {css, injectGlobal} from 'emotion'
 import MultipleCollaboratorField from '../../src'
+import {Canvas, Heading, Paragraph, Box} from '@cmds/demo-utils'
+
 
 injectGlobal`
     * {
@@ -9,6 +11,7 @@ injectGlobal`
     }
     body {
         font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+        margin: 0;
     }
 `
 
@@ -95,14 +98,14 @@ class Demo extends Component {
     }
 
     render() {
-        return <div>
-            <h1>MultipleCollaboratorField Demo</h1>
-            <p>Used for selecting multiple collaborators.</p>
-            <h2>
-                Without options selected
-            </h2>
-            <Context contextId={'recordDetail'} roleId={'editor'}/>
-            <div>
+        return <Canvas>
+            <Heading>
+                Record Detail Context
+            </Heading>
+            <Paragraph>
+                Without options selected and editor role
+            </Paragraph>
+            <Box>
                 <MultipleCollaboratorField
                     id={'fld1'}
                     contextId={'recordDetail'}
@@ -112,9 +115,11 @@ class Demo extends Component {
                     onCollaboratorLink={this.handleCollaboratorLink}
                     onCollaboratorUnlink={this.handleCollaboratorUnlink}
                 />
-            </div>
-            <Context contextId={'recordDetail'} roleId={'readOnly'}/>
-            <div>
+            </Box>
+            <Paragraph>
+                Without options selected and read only role
+            </Paragraph>
+            <Box>
                 <MultipleCollaboratorField
                     id={'fld1'}
                     contextId={'recordDetail'}
@@ -122,50 +127,11 @@ class Demo extends Component {
                     collaboratorIds={this.state.collaboratorIds}
                     collaborators={COLLABORATORS}
                 />
-            </div>
-            <Context contextId={'recordGalleryCard'} roleId={'readOnly'}/>
-            <div
-                className={css`
-                        width: 240px;
-                        height: 22px;
-                    `}
-            >
-                <MultipleCollaboratorField
-                    id={'fld1'}
-                    contextId={'recordGalleryCard'}
-                    roleId={'readOnly'}
-                    collaboratorIds={this.state.collaboratorIds}
-                    collaborators={COLLABORATORS}
-                />
-            </div>
-            <Context contextId={'recordListItem'} roleId={'readOnly'}/>
-            <div
-                className={css`
-                    width: 240px;
-                    height: 22px;
-                `}
-            >
-                <MultipleCollaboratorField
-                    id={'fld1'}
-                    contextId={'recordListItem'}
-                    roleId={'readOnly'}
-                    collaboratorIds={this.state.collaboratorIds}
-                    collaborators={COLLABORATORS}
-                />
-            </div>
-            <h2>
-                With options selected
-            </h2>
-            <Context contextId={'recordDetail'} roleId={'readOnly'}/>
-            <div
-                className={css`
-                    width: 460px;
-                    min-height: 18px;
-                    position: relative;
-                    overflow: visible;
-                    display: block;
-                `}
-            >
+            </Box>
+            <Paragraph>
+                With options selected and read only role
+            </Paragraph>
+            <Box>
                 <MultipleCollaboratorField
                     id={'fld1'}
                     contextId={'recordDetail'}
@@ -173,14 +139,26 @@ class Demo extends Component {
                     collaboratorIds={['opt1', 'opt2', 'opt3', 'opt4', 'opt5', 'opt6', 'opt7', 'opt8', 'opt9', 'opt10']}
                     collaborators={COLLABORATORS}
                 />
-            </div>
-            <Context contextId={'recordGalleryCard'} roleId={'readOnly'}/>
-            <div
-                className={css`
-                    width: 240px;
-                    height: 22px;
-                `}
-            >
+            </Box>
+            <Heading>
+                Record Gallery Card Context
+            </Heading>
+            <Paragraph>
+                Without options selected and read only role
+            </Paragraph>
+            <Box>
+                <MultipleCollaboratorField
+                    id={'fld1'}
+                    contextId={'recordGalleryCard'}
+                    roleId={'readOnly'}
+                    collaboratorIds={this.state.collaboratorIds}
+                    collaborators={COLLABORATORS}
+                />
+            </Box>
+            <Paragraph>
+                With options selected and read only role
+            </Paragraph>
+            <Box>
                 <MultipleCollaboratorField
                     id={'fld1'}
                     contextId={'recordGalleryCard'}
@@ -188,14 +166,26 @@ class Demo extends Component {
                     collaboratorIds={['opt1', 'opt2', 'opt3', 'opt4', 'opt5', 'opt6']}
                     collaborators={COLLABORATORS}
                 />
-            </div>
-            <Context contextId={'recordListItem'} roleId={'readOnly'}/>
-            <div
-                className={css`
-                        width: 240px;
-                        height: 22px;
-                    `}
-            >
+            </Box>
+            <Heading>
+                Record List Item Context
+            </Heading>
+            <Paragraph>
+                Without options selected and read only role
+            </Paragraph>
+            <Box>
+                <MultipleCollaboratorField
+                    id={'fld1'}
+                    contextId={'recordListItem'}
+                    roleId={'readOnly'}
+                    collaboratorIds={this.state.collaboratorIds}
+                    collaborators={COLLABORATORS}
+                />
+            </Box>
+            <Paragraph>
+                With options selected and read only role
+            </Paragraph>
+            <Box>
                 <MultipleCollaboratorField
                     id={'fld1'}
                     contextId={'recordListItem'}
@@ -203,8 +193,8 @@ class Demo extends Component {
                     collaboratorIds={['opt1', 'opt2', 'opt3', 'opt4', 'opt5', 'opt6']}
                     collaborators={COLLABORATORS}
                 />
-            </div>
-        </div>
+            </Box>
+        </Canvas>
     }
 }
 

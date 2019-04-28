@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '@cmds/button'
 import {css} from 'emotion'
 import OptionList from '@cmds/select/es/OptionList'
 import Collaborator from '../../Collaborator'
@@ -32,23 +33,12 @@ export default class MultipleCollaboratorField extends React.Component {
                             position: relative;
                         `}
                     >
-                        <button
+                        <Button
                             type={'button'}
-                            className={css`
-                                padding-top: 4px;
-                                padding-bottom: 4px;
-                                padding-left: 16px;
-                                padding-right: 16px;
-                                border-radius: 3px;
-                                background-color: hsla(0,0%,0%,0.05);
-                                font-weight: 500;
-                                color: #111;
-                                border: none;
-                            `}
                             onClick={() => this.setState({open: true})}
                         >
                             Add a collaborator
-                        </button>
+                        </Button>
                         {this.state.open ? (
                             <OptionList
                                 className={css`
