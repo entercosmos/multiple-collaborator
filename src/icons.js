@@ -1,5 +1,5 @@
 import React from 'react'
-import collaborator from '@cmds/icons/lib/collaborator'
+import collaborator from '@pndr/icons/lib/collaborator'
 
 export default {
     close: props => (

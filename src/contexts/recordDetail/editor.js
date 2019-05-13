@@ -1,8 +1,32 @@
 import React from 'react'
-import Button from '@cmds/button'
+import Button from '@pndr/button'
 import {css} from 'emotion'
-import OptionList from '@cmds/select/es/OptionList'
+import OptionList from '@pndr/select/lib/OptionList'
 import Collaborator from '../../Collaborator'
+
+const EmptyState = ({children}) => (
+    <div
+        className={css`
+            background: #f9f9f9;
+            border-radius: 6px;
+            padding: 30px;
+            text-align: center;
+            @media (min-width: 720px) {
+                padding-top: 50px;
+                padding-bottom: 50px;
+            }
+        `}
+    >
+        <div
+            className={css`
+                color: #000;
+                font-size: 16px;
+            `}
+        >
+            {children}
+        </div>
+    </div>
+)
 
 export default class MultipleCollaboratorField extends React.Component {
 
@@ -78,9 +102,9 @@ export default class MultipleCollaboratorField extends React.Component {
 
                     )
                 }) : (
-                    <div className={css`opacity: 0.7;`}>
-                        No collaborators
-                    </div>
+                    <EmptyState>
+                        There are no collaborators selected for this field
+                    </EmptyState>
                 )}
             </div>
         )

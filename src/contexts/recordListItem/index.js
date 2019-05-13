@@ -1,6 +1,7 @@
 import React from 'react'
 import {css} from 'emotion'
 import Collaborator from '../../Collaborator'
+import defaultEmptyRenderer from '../../defaultEmptyRenderer';
 
 const CollaboratorList = ({children}) => (
     <div
@@ -60,7 +61,7 @@ export default class MultipleCollaboratorField extends React.Component {
             return result
         }, {})
 
-        if (!collaboratorIds) return null
+        if (!collaboratorIds || !collaboratorIds.length) return defaultEmptyRenderer()
 
         return (
             <CollaboratorList>

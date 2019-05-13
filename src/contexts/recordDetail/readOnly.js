@@ -1,22 +1,18 @@
 import React from 'react'
 import {css} from 'emotion'
 import Collaborator from '../../Collaborator'
+import defaultEmptyRenderer from '../../defaultEmptyRenderer';
 
 const OptionList = ({children}) => (
     <div
         className={css`
-            font-size: 13px;
             padding: 0;
             margin: 0;
-            color: #111111;
-            cursor: default;
             outline: none;
             display: flex;
             flex-wrap: wrap;
-            vertical-align: middle;
             position: relative;
             white-space: normal;
-            line-height: 12px;
             overflow: visible;
             background-color: transparent;
             width: 100%;
@@ -66,7 +62,7 @@ export default class MultipleCollaboratorField extends React.Component {
             return result
         }, {})
 
-        if (!collaboratorIds) return null
+        if (!collaboratorIds || !collaboratorIds.length) return defaultEmptyRenderer()
 
         return (
             <OptionList>
